@@ -11,12 +11,10 @@ def fifo(paginas, num_quadros, pagina_consulta):
     historico = []
     page_faults = 0
 
-    print(f"\n===============================")
     print(f"Simulação FIFO - {num_quadros} quadros")
     print(f"Sequência de páginas: {paginas}")
     print(f"Página consultada: {pagina_consulta}")
-    print("===============================\n")
-
+   
     for i, pagina in enumerate(paginas): # Inicia um loop para percorrer todas as páginas na sequência fornecida
         falha = False
         if pagina not in memoria:  # Verifica se a página não está na memória (não foi carregada nos quadros)
@@ -44,11 +42,10 @@ def fifo(paginas, num_quadros, pagina_consulta):
     # Verifica a posição da página consultada
     if pagina_consulta in memoria:
         quadro = list(memoria).index(pagina_consulta) + 1
-        print(f"➡️ A página {pagina_consulta} está no quadro {quadro}.")
+        print(f" A página {pagina_consulta} está no quadro {quadro}.")
     else:
-        print(f"❌ A página {pagina_consulta} não está na memória ao final da execução.")
+        print(f" A página {pagina_consulta} não está na memória ao final da execução.")
 
-    print("----------------------------------\n")
     return df
 
 
